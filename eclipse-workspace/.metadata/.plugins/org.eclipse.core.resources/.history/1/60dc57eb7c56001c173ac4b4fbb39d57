@@ -1,0 +1,11 @@
+package tp.model.agents;
+
+import java.awt.Point;
+
+public class Fleur extends Vegetal {
+
+	
+	public Fleur(Point coord, int nectar, int pollen) {
+		super(coord, nectar, pollen);
+	}
+}

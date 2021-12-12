@@ -1,0 +1,59 @@
+package tp.model.agents;
+
+import java.awt.Point;
+
+import tp.model.comportements.Hebergeur;
+
+public class Abeilles extends Animal implements Hebergeur{
+	
+	//déclaration
+	boolean peutAcceuil;
+	boolean dejaAcceuil = false;
+	int miel = 0;
+	
+	//instanciation
+	public Abeilles(Sexe sexe, Point coord) {
+		super(sexe, coord);
+	}
+	
+	
+	//se rencontrer
+	public void seRencontrer(Animal a) {
+		if(a instanceof Frelons) {
+			if(a.getFaim()) {
+				this.setEtat(Etat.Mourant);
+			} else {
+				this.setEtat(Etat.EnDetresse);
+			}
+			
+			}
+		
+		this.accueillir(a);
+		}
+				
+	
+	
+	
+	//accueillir
+	public boolean peutAccueillir(Animal a) {
+		if (a instanceof Varroa && dejaAcceuil == false) {
+			dejaAcceuil=true;
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public boolean accueillir(Animal a) {
+		peutAcceuil = this.peutAccueillir(a);
+		if(peutAcceuil == true ) {
+			return true;
+		} else {
+			return false;
+		}
+		
+	};
+	
+	
+	
+}

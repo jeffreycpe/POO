@@ -1,0 +1,19 @@
+package tp.model.agents;
+
+import java.awt.Point;
+
+public class Fleur extends Vegetal {
+
+	int pollen = 0;
+	
+	public Fleur(Point coord, int nectar, int pollen) {
+		super(coord, nectar, pollen);
+	}
+	
+	@Override
+	public final void cycle() {
+		this.cycle();
+		this.pollen++;
+		
+	}
+}
